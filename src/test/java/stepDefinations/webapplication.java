@@ -9,10 +9,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObject.homePage;
 import pageObject.loginPage;
-import utils.WebDriverManager;
-import utils.WebDriverManager;
+
 
 public class webapplication{
     loginPage loginPage;
@@ -23,14 +23,20 @@ public class webapplication{
     @Before
     public void setup() {
         // Set ChromeDriver options
+    	
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        
-        // Set the path for the ChromeDriver executable
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Roopa.BS\\Desktop\\chromediver\\chromedriver-win64\\chromedriver.exe");
+// chromeOptions.addArguments("--remote-allow-origins=*");
+ chromeOptions.addArguments("--headless");
+ 
+ // Set the path for the ChromeDriver executable
+ //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Roopa.BS\\Desktop\\chromediver\\chromedriver-win64\\chromedriver.exe");
 
-        // Initialize the WebDriver with ChromeDriver and options
-        driver = new ChromeDriver(chromeOptions);
+ // Initialize the WebDriver with ChromeDriver and options
+ WebDriverManager.chromedriver().setup();
+
+ // Create a new instance of the ChromeDriver
+ //WebDriver driver = new ChromeDriver();
+ driver = new ChromeDriver(chromeOptions);
         loginPage = new loginPage(driver);
         homePage = new homePage(driver);
     }

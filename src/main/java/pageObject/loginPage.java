@@ -23,11 +23,13 @@ public class loginPage extends Base {
     // Method to enter username
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
+        System.out.println(username);
     }
 
     // Method to enter password
     public void enterPassword(String password) {
         passwordField.sendKeys(password);
+        System.out.println(password);
     }
 
     // Method to click on the login button

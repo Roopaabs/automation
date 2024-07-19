@@ -12,6 +12,7 @@ import org.junit.*;
 
 
 public class homePage extends Base {
+	WebDriver wait;
 
 	public homePage(WebDriver driver) {
 		super(driver);

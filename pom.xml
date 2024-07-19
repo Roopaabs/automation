@@ -41,6 +41,18 @@
     <artifactId>webdrivermanager</artifactId>
     <version>5.8.0</version> <!-- or any other version you're using -->
 </dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.8.1</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.8.1</version>
+    <scope>test</scope>
+</dependency>
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
